@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MimiNoseMain));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.os9background = new System.Windows.Forms.PictureBox();
+            this.InformationBox1 = new System.Windows.Forms.Label();
+            this.TestBox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.os9background)).BeginInit();
             this.SuspendLayout();
@@ -58,12 +60,37 @@
             this.os9background.MouseMove += new System.Windows.Forms.MouseEventHandler(this.os9_MouseMove);
             this.os9background.MouseUp += new System.Windows.Forms.MouseEventHandler(this.os9_MouseUp);
             // 
+            // InformationBox1
+            // 
+            this.InformationBox1.AutoSize = true;
+            this.InformationBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.InformationBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.InformationBox1.Location = new System.Drawing.Point(12, 217);
+            this.InformationBox1.Name = "InformationBox1";
+            this.InformationBox1.Size = new System.Drawing.Size(111, 21);
+            this.InformationBox1.TabIndex = 2;
+            this.InformationBox1.Text = "Loading...";
+            // 
+            // TestBox
+            // 
+            this.TestBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.TestBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TestBox.Font = new System.Drawing.Font("MS Mincho", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestBox.Location = new System.Drawing.Point(31, 277);
+            this.TestBox.MinimumSize = new System.Drawing.Size(400, 200);
+            this.TestBox.Name = "TestBox";
+            this.TestBox.Size = new System.Drawing.Size(400, 200);
+            this.TestBox.TabIndex = 3;
+            this.TestBox.Text = "Loading...";
+            // 
             // MimiNoseMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Fuchsia;
             this.ClientSize = new System.Drawing.Size(488, 546);
+            this.Controls.Add(this.TestBox);
+            this.Controls.Add(this.InformationBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.os9background);
             this.Cursor = System.Windows.Forms.Cursors.Help;
@@ -77,6 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.os9background)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -84,6 +112,8 @@
 
         private System.Windows.Forms.PictureBox os9background;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label InformationBox1;
+        private System.Windows.Forms.Label TestBox;
     }
 }
 
