@@ -19,10 +19,12 @@ namespace MimiNose
         bool isCurrentTaskFinished = true;
         String[] CPUInformation = new string[40]; //stores the raw CPU values
         String[] DiskValues = new string[40]; //stores the raw disk values
+        String[] MemoryValues = new string[40]; //stores the raw memory values
         String currentUserInformation = ""; //Login name, computer name and domain of USER.
         String currentCPUInformation = ""; //Name of processor, speed etc
         String currentDiskInformation = ""; //Information about current main disk
         int diskUsageTotalForProgressBar = 0; //percentage of disk usage as an int, so use for a visual progress bar.
+        String currentMemoryInformation = ""; //Details about installed memory.
 
         public MimiNoseMain()
         {
@@ -34,15 +36,18 @@ namespace MimiNose
         {
             
             await writeLineSlowly("Loading...", InformationBox1);
-            //await boxAnimationLoading();
-            await getUserInfo();
-            await writeLineSlowly(currentUserInformation, InformationBox1);
-            // await SystemInformationParserFULL("Win32_Processor");
-            await getCPUInformation();
-            await writeLineSlowly(currentCPUInformation, CpuInfoBox);
-            await getDiskInfo();
-            await writeLineSlowly(currentDiskInformation, DiskInfo);
-            await displayDiskProgress(diskUsageTotalForProgressBar);
+            //await boxAnimationLoading(); //Add this in after
+            await getUserInfo(); //Get login details
+            await writeLineSlowly(currentUserInformation, InformationBox1); //write login details to top label
+            // await SystemInformationParserFULL("Win32_Processor"); //TEST
+            await getCPUInformation(); //load Cpu information values
+            await writeLineSlowly(currentCPUInformation, CpuInfoBox); //write CPU values to second label
+            await getDiskInfo(); //load disk information
+            await writeLineSlowly(currentDiskInformation, DiskInfo); //write disk values to next label
+            await displayDiskProgress(diskUsageTotalForProgressBar); //display progress bar, increment to show total space used on disk.
+            await getMemoryInformation(); //get information about RAM
+            await writeLineSlowly(currentMemoryInformation, MemoryInfoBox);
+
         }
 
         private async Task printCPUinformation()
@@ -170,6 +175,52 @@ namespace MimiNose
             {
                 DiskSpaceUsedBar.PerformStep();
             }
+            DiskSpaceUsedBar.Visible = true;
+        }
+
+        private async Task getMemoryInformation() //Searches for the current CPU information and stores it in the currentCPUInformation string.
+        {
+            int parsedRowCounter = 0; //Counter for tallying up each row of the system properties
+            String[] parsedInfo = new string[200]; //new array to fit all of the parsed system info into
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from " + "Win32_PhysicalMemory");
+            foreach (ManagementObject row in searcher.Get())
+            {
+                foreach (PropertyData property in row.Properties)
+                {
+                    if (parsedRowCounter < 31)
+                    {
+
+
+                        try //have to catch null value returns as this version of C# can't have nullable strings...
+                        {
+                            parsedInfo[parsedRowCounter] = property.Value.ToString() as String; //current row of win32_processor is turned into a string
+                        }
+                        catch (Exception nullvalue)
+                        {
+                            parsedInfo[parsedRowCounter] = " "; //if it's null just make it blank.
+                        }
+                        finally
+                        {
+                            MemoryValues[parsedRowCounter] = parsedInfo[parsedRowCounter];
+                            TestBox.Text = TestBox.Text + $"{parsedRowCounter}. {MemoryValues[parsedRowCounter]} ";
+                            parsedRowCounter++;
+                        }
+                    }
+
+                }
+
+            }
+            decimal memorySize = decimal.Parse(MemoryValues[2]); //get total bytes of memory
+            memorySize = memorySize / 1000000000; //convert to GB
+            memorySize = Math.Round(memorySize, 1); //Round to 1 decimal x.xGB
+            string ramCompany = MemoryValues[15];
+            string ramModel = MemoryValues[22];
+            string ramSpeed = MemoryValues[30];
+            currentMemoryInformation = $"Installed Memory: {ramCompany} brand RAM, model {ramModel}| {memorySize}GB clocked at {ramSpeed}MHz.";
+            //*values wanted: 2. Size in bytes (8589934592)
+            //                15. Manufacturer (Saumsung)
+            //                22. Model (M378A1K43EB2-CWE)
+            //                30. Memory Speed in Mhz (3200)
         }
 
 

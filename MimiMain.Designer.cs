@@ -36,6 +36,7 @@
             this.CpuInfoBox = new System.Windows.Forms.Label();
             this.DiskInfo = new System.Windows.Forms.Label();
             this.DiskSpaceUsedBar = new System.Windows.Forms.ProgressBar();
+            this.MemoryInfoBox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.os9background)).BeginInit();
             this.SuspendLayout();
@@ -121,6 +122,20 @@
             this.DiskSpaceUsedBar.Size = new System.Drawing.Size(434, 23);
             this.DiskSpaceUsedBar.Step = 1;
             this.DiskSpaceUsedBar.TabIndex = 6;
+            this.DiskSpaceUsedBar.Visible = false;
+            // 
+            // MemoryInfoBox
+            // 
+            this.MemoryInfoBox.AutoSize = true;
+            this.MemoryInfoBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.MemoryInfoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MemoryInfoBox.Font = new System.Drawing.Font("MS Mincho", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemoryInfoBox.Location = new System.Drawing.Point(12, 358);
+            this.MemoryInfoBox.MaximumSize = new System.Drawing.Size(420, 36);
+            this.MemoryInfoBox.Name = "MemoryInfoBox";
+            this.MemoryInfoBox.Size = new System.Drawing.Size(89, 17);
+            this.MemoryInfoBox.TabIndex = 7;
+            this.MemoryInfoBox.Text = "Loading...";
             // 
             // MimiNoseMain
             // 
@@ -128,6 +143,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Fuchsia;
             this.ClientSize = new System.Drawing.Size(1243, 700);
+            this.Controls.Add(this.MemoryInfoBox);
             this.Controls.Add(this.DiskSpaceUsedBar);
             this.Controls.Add(this.DiskInfo);
             this.Controls.Add(this.CpuInfoBox);
@@ -159,6 +175,7 @@
         private System.Windows.Forms.Label CpuInfoBox;
         private System.Windows.Forms.Label DiskInfo;
         private System.Windows.Forms.ProgressBar DiskSpaceUsedBar;
+        private System.Windows.Forms.Label MemoryInfoBox;
     }
 }
 
