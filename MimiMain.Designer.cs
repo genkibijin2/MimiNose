@@ -33,6 +33,9 @@
             this.os9background = new System.Windows.Forms.PictureBox();
             this.InformationBox1 = new System.Windows.Forms.Label();
             this.TestBox = new System.Windows.Forms.Label();
+            this.CpuInfoBox = new System.Windows.Forms.Label();
+            this.DiskInfo = new System.Windows.Forms.Label();
+            this.DiskSpaceUsedBar = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.os9background)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +56,7 @@
             this.os9background.Image = global::MimiNose.Properties.Resources.os9window;
             this.os9background.Location = new System.Drawing.Point(0, 0);
             this.os9background.Name = "os9background";
-            this.os9background.Size = new System.Drawing.Size(488, 546);
+            this.os9background.Size = new System.Drawing.Size(1243, 700);
             this.os9background.TabIndex = 0;
             this.os9background.TabStop = false;
             this.os9background.MouseDown += new System.Windows.Forms.MouseEventHandler(this.os9_MouseDown);
@@ -65,9 +68,11 @@
             this.InformationBox1.AutoSize = true;
             this.InformationBox1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.InformationBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.InformationBox1.Font = new System.Drawing.Font("MS Mincho", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InformationBox1.Location = new System.Drawing.Point(12, 217);
+            this.InformationBox1.MaximumSize = new System.Drawing.Size(420, 17);
             this.InformationBox1.Name = "InformationBox1";
-            this.InformationBox1.Size = new System.Drawing.Size(111, 21);
+            this.InformationBox1.Size = new System.Drawing.Size(89, 17);
             this.InformationBox1.TabIndex = 2;
             this.InformationBox1.Text = "Loading...";
             // 
@@ -76,19 +81,56 @@
             this.TestBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.TestBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TestBox.Font = new System.Drawing.Font("MS Mincho", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestBox.Location = new System.Drawing.Point(31, 277);
+            this.TestBox.Location = new System.Drawing.Point(508, 9);
             this.TestBox.MinimumSize = new System.Drawing.Size(400, 200);
             this.TestBox.Name = "TestBox";
-            this.TestBox.Size = new System.Drawing.Size(400, 200);
+            this.TestBox.Size = new System.Drawing.Size(553, 337);
             this.TestBox.TabIndex = 3;
-            this.TestBox.Text = "Loading...";
+            this.TestBox.Text = "Test Data Output Here";
+            // 
+            // CpuInfoBox
+            // 
+            this.CpuInfoBox.AutoSize = true;
+            this.CpuInfoBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CpuInfoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CpuInfoBox.Font = new System.Drawing.Font("MS Mincho", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CpuInfoBox.Location = new System.Drawing.Point(12, 252);
+            this.CpuInfoBox.MaximumSize = new System.Drawing.Size(420, 36);
+            this.CpuInfoBox.Name = "CpuInfoBox";
+            this.CpuInfoBox.Size = new System.Drawing.Size(89, 17);
+            this.CpuInfoBox.TabIndex = 4;
+            this.CpuInfoBox.Text = "Loading...";
+            // 
+            // DiskInfo
+            // 
+            this.DiskInfo.AutoSize = true;
+            this.DiskInfo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DiskInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DiskInfo.Font = new System.Drawing.Font("MS Mincho", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DiskInfo.Location = new System.Drawing.Point(12, 288);
+            this.DiskInfo.MaximumSize = new System.Drawing.Size(420, 36);
+            this.DiskInfo.Name = "DiskInfo";
+            this.DiskInfo.Size = new System.Drawing.Size(89, 17);
+            this.DiskInfo.TabIndex = 5;
+            this.DiskInfo.Text = "Loading...";
+            // 
+            // DiskSpaceUsedBar
+            // 
+            this.DiskSpaceUsedBar.Location = new System.Drawing.Point(12, 323);
+            this.DiskSpaceUsedBar.Name = "DiskSpaceUsedBar";
+            this.DiskSpaceUsedBar.Size = new System.Drawing.Size(434, 23);
+            this.DiskSpaceUsedBar.Step = 1;
+            this.DiskSpaceUsedBar.TabIndex = 6;
             // 
             // MimiNoseMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Fuchsia;
-            this.ClientSize = new System.Drawing.Size(488, 546);
+            this.ClientSize = new System.Drawing.Size(1243, 700);
+            this.Controls.Add(this.DiskSpaceUsedBar);
+            this.Controls.Add(this.DiskInfo);
+            this.Controls.Add(this.CpuInfoBox);
             this.Controls.Add(this.TestBox);
             this.Controls.Add(this.InformationBox1);
             this.Controls.Add(this.pictureBox1);
@@ -114,6 +156,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label InformationBox1;
         private System.Windows.Forms.Label TestBox;
+        private System.Windows.Forms.Label CpuInfoBox;
+        private System.Windows.Forms.Label DiskInfo;
+        private System.Windows.Forms.ProgressBar DiskSpaceUsedBar;
     }
 }
 
