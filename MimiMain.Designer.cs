@@ -95,7 +95,7 @@
             this.CpuInfoBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CpuInfoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CpuInfoBox.Font = new System.Drawing.Font("MS Mincho", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CpuInfoBox.Location = new System.Drawing.Point(12, 252);
+            this.CpuInfoBox.Location = new System.Drawing.Point(12, 236);
             this.CpuInfoBox.MaximumSize = new System.Drawing.Size(420, 36);
             this.CpuInfoBox.Name = "CpuInfoBox";
             this.CpuInfoBox.Size = new System.Drawing.Size(89, 17);
@@ -108,7 +108,7 @@
             this.DiskInfo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.DiskInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.DiskInfo.Font = new System.Drawing.Font("MS Mincho", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DiskInfo.Location = new System.Drawing.Point(12, 288);
+            this.DiskInfo.Location = new System.Drawing.Point(12, 270);
             this.DiskInfo.MaximumSize = new System.Drawing.Size(420, 36);
             this.DiskInfo.Name = "DiskInfo";
             this.DiskInfo.Size = new System.Drawing.Size(89, 17);
@@ -117,9 +117,9 @@
             // 
             // DiskSpaceUsedBar
             // 
-            this.DiskSpaceUsedBar.Location = new System.Drawing.Point(12, 323);
+            this.DiskSpaceUsedBar.Location = new System.Drawing.Point(13, 306);
             this.DiskSpaceUsedBar.Name = "DiskSpaceUsedBar";
-            this.DiskSpaceUsedBar.Size = new System.Drawing.Size(434, 23);
+            this.DiskSpaceUsedBar.Size = new System.Drawing.Size(337, 10);
             this.DiskSpaceUsedBar.Step = 1;
             this.DiskSpaceUsedBar.TabIndex = 6;
             this.DiskSpaceUsedBar.Visible = false;
@@ -130,7 +130,7 @@
             this.MemoryInfoBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.MemoryInfoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MemoryInfoBox.Font = new System.Drawing.Font("MS Mincho", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MemoryInfoBox.Location = new System.Drawing.Point(12, 358);
+            this.MemoryInfoBox.Location = new System.Drawing.Point(12, 319);
             this.MemoryInfoBox.MaximumSize = new System.Drawing.Size(420, 36);
             this.MemoryInfoBox.Name = "MemoryInfoBox";
             this.MemoryInfoBox.Size = new System.Drawing.Size(89, 17);

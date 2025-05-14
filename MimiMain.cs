@@ -50,14 +50,6 @@ namespace MimiNose
 
         }
 
-        private async Task printCPUinformation()
-        {
-            for (int i = 0; i < 40; i++)
-            {
-                TestBox.Text = TestBox.Text + $"{i}. {CPUInformation[i]} ";
-            }
-        }
-
         private async Task writeLineSlowly(string currentMessage, Label whereToOutPut) //Creates typewriter effect, usage is string to output, location to output
         {
             int textSpeedDelayTime = (20);
