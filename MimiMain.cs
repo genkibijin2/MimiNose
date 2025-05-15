@@ -20,11 +20,15 @@ namespace MimiNose
         String[] CPUInformation = new string[40]; //stores the raw CPU values
         String[] DiskValues = new string[40]; //stores the raw disk values
         String[] MemoryValues = new string[40]; //stores the raw memory values
+        String[] MoboValues = new string[40]; //stores the raw motherboard values
+        String[] GPUValues = new string[40]; //stores the raw GPU values
         String currentUserInformation = ""; //Login name, computer name and domain of USER.
         String currentCPUInformation = ""; //Name of processor, speed etc
         String currentDiskInformation = ""; //Information about current main disk
         int diskUsageTotalForProgressBar = 0; //percentage of disk usage as an int, so use for a visual progress bar.
         String currentMemoryInformation = ""; //Details about installed memory.
+        String currentGPUInformation = ""; //Details about video drivers.
+        String currentMoboInformation = ""; //details about current motherboard.
 
         public MimiNoseMain()
         {
@@ -47,6 +51,9 @@ namespace MimiNose
             await displayDiskProgress(diskUsageTotalForProgressBar); //display progress bar, increment to show total space used on disk.
             await getMemoryInformation(); //get information about RAM
             await writeLineSlowly(currentMemoryInformation, MemoryInfoBox);
+            await getGPUInformation(); //get information about GPU
+            await writeLineSlowly(currentGPUInformation, GPUInfoBox);
+            await getMoboInformation(); //get information about motherboard.
 
         }
 
@@ -194,7 +201,6 @@ namespace MimiNose
                         finally
                         {
                             MemoryValues[parsedRowCounter] = parsedInfo[parsedRowCounter];
-                            TestBox.Text = TestBox.Text + $"{parsedRowCounter}. {MemoryValues[parsedRowCounter]} ";
                             parsedRowCounter++;
                         }
                     }
@@ -215,6 +221,86 @@ namespace MimiNose
             //                30. Memory Speed in Mhz (3200)
         }
 
+        private async Task getGPUInformation() //Searches for the current CPU information and stores it in the currentCPUInformation string.
+        {
+            int parsedRowCounter = 0; //Counter for tallying up each row of the system properties
+            String[] parsedInfo = new string[200]; //new array to fit all of the parsed system info into
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from " + "Win32_VideoController");
+            foreach (ManagementObject row in searcher.Get())
+            {
+                foreach (PropertyData property in row.Properties)
+                {
+                    if (parsedRowCounter < 30)
+                    {
+
+
+                        try //have to catch null value returns as this version of C# can't have nullable strings...
+                        {
+                            parsedInfo[parsedRowCounter] = property.Value.ToString() as String; //current row of win32_processor is turned into a string
+                        }
+                        catch (Exception nullvalue)
+                        {
+                            parsedInfo[parsedRowCounter] = " "; //if it's null just make it blank.
+                        }
+                        finally
+                        {
+                            GPUValues[parsedRowCounter] = parsedInfo[parsedRowCounter];
+                            parsedRowCounter++;
+                        }
+                    }
+
+                }
+
+            }
+            String horizontalRes = GPUValues[12];
+            String verticalRes = GPUValues[18];
+            String GPUName = GPUValues[6];
+            currentGPUInformation = $"GPU: {GPUName} @ {horizontalRes}x{verticalRes}";
+            //*values wanted: 
+            //               6. Graphics hardware name (Intel (R) UHD Graphics 630)
+            //               12. Horizontal resolution  (1920)
+            //               18. Vertical Resolution (1080)
+        }
+
+        private async Task getMoboInformation() //Searches for the current CPU information and stores it in the currentCPUInformation string.
+        {
+            int parsedRowCounter = 0; //Counter for tallying up each row of the system properties
+            String[] parsedInfo = new string[200]; //new array to fit all of the parsed system info into
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from " + "Win32_BaseBoard");
+            foreach (ManagementObject row in searcher.Get())
+            {
+                foreach (PropertyData property in row.Properties)
+                {
+                    if (parsedRowCounter < 30)
+                    {
+
+
+                        try //have to catch null value returns as this version of C# can't have nullable strings...
+                        {
+                            parsedInfo[parsedRowCounter] = property.Value.ToString() as String; //current row of win32_processor is turned into a string
+                        }
+                        catch (Exception nullvalue)
+                        {
+                            parsedInfo[parsedRowCounter] = " "; //if it's null just make it blank.
+                        }
+                        finally
+                        {
+                            MoboValues[parsedRowCounter] = parsedInfo[parsedRowCounter];
+                            TestBox.Text = TestBox.Text + $"{parsedRowCounter}. {MoboValues[parsedRowCounter]}";
+                            parsedRowCounter++;
+                        }
+                    }
+
+                }
+
+            }
+
+            currentMoboInformation = $"";
+            //*values wanted: 
+            //               
+            //               
+            //               
+        }
 
         //--test for which information I can extract from system--//
         // private async Task systemInformationTest() //reference guide for environment functions.

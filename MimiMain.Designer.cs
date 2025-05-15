@@ -37,6 +37,7 @@
             this.DiskInfo = new System.Windows.Forms.Label();
             this.DiskSpaceUsedBar = new System.Windows.Forms.ProgressBar();
             this.MemoryInfoBox = new System.Windows.Forms.Label();
+            this.GPUInfoBox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.os9background)).BeginInit();
             this.SuspendLayout();
@@ -137,12 +138,26 @@
             this.MemoryInfoBox.TabIndex = 7;
             this.MemoryInfoBox.Text = "Loading...";
             // 
+            // GPUInfoBox
+            // 
+            this.GPUInfoBox.AutoSize = true;
+            this.GPUInfoBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.GPUInfoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GPUInfoBox.Font = new System.Drawing.Font("MS Mincho", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GPUInfoBox.Location = new System.Drawing.Point(12, 352);
+            this.GPUInfoBox.MaximumSize = new System.Drawing.Size(420, 36);
+            this.GPUInfoBox.Name = "GPUInfoBox";
+            this.GPUInfoBox.Size = new System.Drawing.Size(89, 17);
+            this.GPUInfoBox.TabIndex = 8;
+            this.GPUInfoBox.Text = "Loading...";
+            // 
             // MimiNoseMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Fuchsia;
             this.ClientSize = new System.Drawing.Size(1243, 700);
+            this.Controls.Add(this.GPUInfoBox);
             this.Controls.Add(this.MemoryInfoBox);
             this.Controls.Add(this.DiskSpaceUsedBar);
             this.Controls.Add(this.DiskInfo);
@@ -176,6 +191,7 @@
         private System.Windows.Forms.Label DiskInfo;
         private System.Windows.Forms.ProgressBar DiskSpaceUsedBar;
         private System.Windows.Forms.Label MemoryInfoBox;
+        private System.Windows.Forms.Label GPUInfoBox;
     }
 }
 
