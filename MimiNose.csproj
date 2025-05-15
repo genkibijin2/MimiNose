@@ -103,5 +103,35 @@
   <ItemGroup>
     <None Include="Resources\cloudwOverlay.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\water1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\os9window1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HEADER_defaultMac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HEADER_Mahjong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HEADER_Euroglaze.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonjong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonEG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonmac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonVelvet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HEADER_velvet.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

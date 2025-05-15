@@ -38,22 +38,38 @@ namespace MimiNose
 
         private async Task StartupSequence()
         {
-            
+            MainLoadingBar.Visible = true; //Main loading bar at bottom of screen, tracks loading for all information fields.
             await writeLineSlowly("Loading...", InformationBox1);
+            MainLoadingBar.PerformStep();
             //await boxAnimationLoading(); //Add this in after
             await getUserInfo(); //Get login details
+            MainLoadingBar.PerformStep();
             await writeLineSlowly(currentUserInformation, InformationBox1); //write login details to top label
+            MainLoadingBar.PerformStep();
             // await SystemInformationParserFULL("Win32_Processor"); //TEST
             await getCPUInformation(); //load Cpu information values
+            MainLoadingBar.PerformStep();
+            CpuInfoBox.Visible = true; //display CPU information box
             await writeLineSlowly(currentCPUInformation, CpuInfoBox); //write CPU values to second label
+            MainLoadingBar.PerformStep();
             await getDiskInfo(); //load disk information
+            MainLoadingBar.PerformStep();
+            DiskInfo.Visible = true; //Display disk information box
             await writeLineSlowly(currentDiskInformation, DiskInfo); //write disk values to next label
+            MainLoadingBar.PerformStep();
             await displayDiskProgress(diskUsageTotalForProgressBar); //display progress bar, increment to show total space used on disk.
+            MainLoadingBar.PerformStep();
             await getMemoryInformation(); //get information about RAM
+            MainLoadingBar.PerformStep();
+            MemoryInfoBox.Visible = true; //Display RAM information box
             await writeLineSlowly(currentMemoryInformation, MemoryInfoBox);
+            MainLoadingBar.PerformStep();
             await getGPUInformation(); //get information about GPU
+            MainLoadingBar.PerformStep();
+            GPUInfoBox.Visible = true;
             await writeLineSlowly(currentGPUInformation, GPUInfoBox);
-            await getMoboInformation(); //get information about motherboard.
+            MainLoadingBar.PerformStep();
+            MainLoadingBar.Visible = false; //Hide bottom loading bar once all information is obtained.
 
         }
 
@@ -262,45 +278,6 @@ namespace MimiNose
             //               18. Vertical Resolution (1080)
         }
 
-        private async Task getMoboInformation() //Searches for the current CPU information and stores it in the currentCPUInformation string.
-        {
-            int parsedRowCounter = 0; //Counter for tallying up each row of the system properties
-            String[] parsedInfo = new string[200]; //new array to fit all of the parsed system info into
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from " + "Win32_BaseBoard");
-            foreach (ManagementObject row in searcher.Get())
-            {
-                foreach (PropertyData property in row.Properties)
-                {
-                    if (parsedRowCounter < 30)
-                    {
-
-
-                        try //have to catch null value returns as this version of C# can't have nullable strings...
-                        {
-                            parsedInfo[parsedRowCounter] = property.Value.ToString() as String; //current row of win32_processor is turned into a string
-                        }
-                        catch (Exception nullvalue)
-                        {
-                            parsedInfo[parsedRowCounter] = " "; //if it's null just make it blank.
-                        }
-                        finally
-                        {
-                            MoboValues[parsedRowCounter] = parsedInfo[parsedRowCounter];
-                            TestBox.Text = TestBox.Text + $"{parsedRowCounter}. {MoboValues[parsedRowCounter]}";
-                            parsedRowCounter++;
-                        }
-                    }
-
-                }
-
-            }
-
-            currentMoboInformation = $"";
-            //*values wanted: 
-            //               
-            //               
-            //               
-        }
 
         //--test for which information I can extract from system--//
         // private async Task systemInformationTest() //reference guide for environment functions.
@@ -379,6 +356,31 @@ namespace MimiNose
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void os9background_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ImageOption1_Click(object sender, EventArgs e)
+        {
+            HeaderBox.Image = Properties.Resources.HEADER_Mahjong;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            HeaderBox.Image = Properties.Resources.HEADER_Euroglaze;
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            HeaderBox.Image = Properties.Resources.HEADER_defaultMac;
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            HeaderBox.Image = Properties.Resources.HEADER_velvet;
         }
         //---End of mouse clicking code section---\\
     }

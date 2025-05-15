@@ -63,6 +63,46 @@ namespace MimiNose.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap buttonEG {
+            get {
+                object obj = ResourceManager.GetObject("buttonEG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonjong {
+            get {
+                object obj = ResourceManager.GetObject("buttonjong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonmac {
+            get {
+                object obj = ResourceManager.GetObject("buttonmac", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buttonVelvet {
+            get {
+                object obj = ResourceManager.GetObject("buttonVelvet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cloud {
             get {
                 object obj = ResourceManager.GetObject("cloud", resourceCulture);
@@ -76,6 +116,46 @@ namespace MimiNose.Properties {
         internal static System.Drawing.Bitmap cloudwOverlay {
             get {
                 object obj = ResourceManager.GetObject("cloudwOverlay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HEADER_defaultMac {
+            get {
+                object obj = ResourceManager.GetObject("HEADER_defaultMac", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HEADER_Euroglaze {
+            get {
+                object obj = ResourceManager.GetObject("HEADER_Euroglaze", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HEADER_Mahjong {
+            get {
+                object obj = ResourceManager.GetObject("HEADER_Mahjong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HEADER_velvet {
+            get {
+                object obj = ResourceManager.GetObject("HEADER_velvet", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +203,29 @@ namespace MimiNose.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap os9window1 {
+            get {
+                object obj = ResourceManager.GetObject("os9window1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap paintbackground {
             get {
                 object obj = ResourceManager.GetObject("paintbackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap water1 {
+            get {
+                object obj = ResourceManager.GetObject("water1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
