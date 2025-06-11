@@ -382,6 +382,11 @@ namespace MimiNose
         {
             HeaderBox.Image = Properties.Resources.HEADER_velvet;
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         //---End of mouse clicking code section---\\
     }
 }

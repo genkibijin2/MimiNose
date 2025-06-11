@@ -142,8 +142,11 @@
   <data name="os9back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\os9back.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buttonjong" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buttonjong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HEADER_velvet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEADER_velvet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HEADER_defaultMac" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HEADER_defaultMac.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="msmincho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\msmincho.ttc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -155,8 +158,8 @@
   <data name="os9window1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\os9window1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HEADER_defaultMac" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HEADER_defaultMac.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="buttonjong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonjong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HEADER_Euroglaze" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HEADER_Euroglaze.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -167,7 +170,7 @@
   <data name="os9window" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\os9window.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HEADER_velvet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HEADER_velvet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Closebutton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Closebutton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

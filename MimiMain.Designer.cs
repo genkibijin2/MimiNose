@@ -36,20 +36,20 @@
             this.MemoryInfoBox = new System.Windows.Forms.Label();
             this.GPUInfoBox = new System.Windows.Forms.Label();
             this.MainLoadingBar = new System.Windows.Forms.ProgressBar();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.HeaderBox = new System.Windows.Forms.PictureBox();
             this.ImageChangeVelvet = new System.Windows.Forms.PictureBox();
             this.ImageChangeMac = new System.Windows.Forms.PictureBox();
             this.ImageChangeEurogl = new System.Windows.Forms.PictureBox();
             this.ImageChangeJong = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.os9background = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HeaderBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageChangeVelvet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageChangeMac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageChangeEurogl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageChangeJong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.os9background)).BeginInit();
             this.SuspendLayout();
@@ -142,6 +142,16 @@
             this.MainLoadingBar.TabIndex = 9;
             this.MainLoadingBar.Visible = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MimiNose.Properties.Resources.Closebutton1;
+            this.pictureBox2.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(17, 16);
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // HeaderBox
             // 
             this.HeaderBox.Image = global::MimiNose.Properties.Resources.HEADER_Mahjong;
@@ -191,17 +201,6 @@
             this.ImageChangeJong.TabStop = false;
             this.ImageChangeJong.Click += new System.EventHandler(this.ImageOption1_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Image = global::MimiNose.Properties.Resources.water1;
-            this.pictureBox2.Location = new System.Drawing.Point(480, 447);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(41, 94);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MimiNose.Properties.Resources.cloudwOverlay;
@@ -218,7 +217,7 @@
             this.os9background.Image = global::MimiNose.Properties.Resources.os9window1;
             this.os9background.Location = new System.Drawing.Point(0, 0);
             this.os9background.Name = "os9background";
-            this.os9background.Size = new System.Drawing.Size(1243, 700);
+            this.os9background.Size = new System.Drawing.Size(483, 541);
             this.os9background.TabIndex = 0;
             this.os9background.TabStop = false;
             this.os9background.Click += new System.EventHandler(this.os9background_Click);
@@ -231,13 +230,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Fuchsia;
-            this.ClientSize = new System.Drawing.Size(1243, 700);
+            this.ClientSize = new System.Drawing.Size(483, 541);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.HeaderBox);
             this.Controls.Add(this.ImageChangeVelvet);
             this.Controls.Add(this.ImageChangeMac);
             this.Controls.Add(this.ImageChangeEurogl);
             this.Controls.Add(this.ImageChangeJong);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.MainLoadingBar);
             this.Controls.Add(this.GPUInfoBox);
             this.Controls.Add(this.MemoryInfoBox);
@@ -255,12 +254,12 @@
             this.Name = "MimiNoseMain";
             this.Text = "MimiNose";
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HeaderBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageChangeVelvet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageChangeMac)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageChangeEurogl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImageChangeJong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.os9background)).EndInit();
             this.ResumeLayout(false);
@@ -279,12 +278,12 @@
         private System.Windows.Forms.Label MemoryInfoBox;
         private System.Windows.Forms.Label GPUInfoBox;
         private System.Windows.Forms.ProgressBar MainLoadingBar;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox ImageChangeJong;
         private System.Windows.Forms.PictureBox ImageChangeEurogl;
         private System.Windows.Forms.PictureBox ImageChangeMac;
         private System.Windows.Forms.PictureBox ImageChangeVelvet;
         private System.Windows.Forms.PictureBox HeaderBox;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
